@@ -11,14 +11,14 @@ from pyspark.sql.window import Window
 
 # COMMAND ----------
 
-print("Files in the `dbfs:/FileStore/shared_uploads/deeptidongare@gmail.com` directory:")
-files_in_filestore_tables = dbutils.fs.ls("dbfs:/FileStore/shared_uploads/deeptidongare@gmail.com")
+print("Files in the `dbfs:/FileStore/shared_uploads/abc@gmail.com` directory:")
+files_in_filestore_tables = dbutils.fs.ls("dbfs:/FileStore/shared_uploads/abd@gmail.com")
 for f in files_in_filestore_tables:
     print(f)
 
 # COMMAND ----------
 
-dbutils.fs.ls("dbfs:/FileStore/shared_uploads/deeptidongare@gmail.com/Ball_by_Ball2.csv")
+dbutils.fs.ls("dbfs:/FileStore/shared_uploads/abc@gmail.com/Ball_by_Ball2.csv")
 
 # COMMAND ----------
 
@@ -78,7 +78,7 @@ ball_schema = StructType([
 df_ball = spark.read\
     .schema(ball_schema)\
         .option("header","True")\
-            .csv("dbfs:/FileStore/shared_uploads/deeptidongare@gmail.com/Ball_by_Ball2.csv")
+            .csv("dbfs:/FileStore/shared_uploads/abc@gmail.com/Ball_by_Ball2.csv")
 
 df_ball.printSchema()
 display(df_ball)
